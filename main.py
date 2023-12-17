@@ -3,16 +3,12 @@ import pyautogui
 import keyboard
 # import time
 
-screenWidth, screenHeight = pyautogui.size()
-
-print(screenWidth, screenHeight)
 
 # C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s --incognito
 url = 'https://capybara-clicker.com/'
 # webbrowser.register("browser", None, webbrowser.GenericBrowser(["C:\Program Files (x86)\Google\Chrome\Application\chrome.exe", "-incognito", "%s"]), preferred=True)
 webbrowser.open(url)
 
-im = None
 step = 1
 countSinceLastScroll = 0
 scrollCount = 0
@@ -36,7 +32,7 @@ while True:
 
         # for the last part of the game
         if scrollCount == 7:
-            if countSinceLastScroll <= 100 and \
+            if countSinceLastScroll <= 150 and \
                     pyautogui.pixelMatchesColor(1280, 830, (247, 159, 0)):
                 pyautogui.click(1280, 830)
             # hit top item
@@ -48,7 +44,7 @@ while True:
                 pyautogui.click(1280, 460)
                 countSinceLastScroll += 1
 
-            # hit top item
+            # hit capybara
             else:
                 pyautogui.click(628, 575)
 
@@ -57,7 +53,7 @@ while True:
                 pyautogui.click(1270, 355)
                 countSinceLastScroll += 1
 
-            # hit top item
+            # hit capybara
             else:
                 pyautogui.click(628, 575)
 
